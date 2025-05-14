@@ -7,7 +7,6 @@
     "eslint": "^8.49.0",
     "eslint-config-react-app": "^7.0.1",
     "new-component": "5.0.2",
-    "parcel": "2.12.0",
     "parcel-reporter-static-files-copy": "1.5.2",
     "prettier": "2.6.2",
     "process": "0.11.10",
@@ -25,5 +24,10 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "staticFiles": {
     "staticPath": "assets"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.15.0",
+    "@parcel/reporter-dev-server": "^2.15.0",
+    "parcel": "^2.15.0"
   }
 }
