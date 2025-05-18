@@ -8,17 +8,23 @@ import Toast from "../Toast/Toast";
 const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 
 function ToastPlayground() {
+  const[isRendered,setIsRendered] = React.useState(false);
   const [message, setMessage] = React.useState("");
   const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0]);
+
+  function handleDismiss(){
+    setIsRendered(false);
+
+  }
   return (
     <div className={styles.wrapper}>
       <header>
         <img alt="Cute toast mascot" src="/toast.png" />
         <h1>Toast Playground</h1>
       </header>
-      <Toast variant={variant}>
+      {isRendered && <Toast variant={variant} handleDismiss={handleDismiss}>
       {message}
-      </Toast>
+      </Toast>}
 
       <div className={styles.controlsWrapper}>
         <div className={styles.row}>
@@ -67,7 +73,7 @@ function ToastPlayground() {
           <div className={styles.label} />
           <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
             <Button onClick={()=>{
-              window.alert(`${variant}-${message}`)
+              setIsRendered(true);
             }}>Pop Toast!</Button>
           </div>
         </div>
