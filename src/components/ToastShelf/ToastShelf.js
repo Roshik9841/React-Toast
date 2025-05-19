@@ -3,7 +3,7 @@ import { ToastContext } from '../ToastProvider/ToastProvider';
 import Toast from '../Toast';
 import styles from './ToastShelf.module.css';
 
-function ToastShelf({}) {
+function ToastShelf() {
   const{toasts} = React.useContext(ToastContext);
   return (
     <ol className={styles.wrapper}>
