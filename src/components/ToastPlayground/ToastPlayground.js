@@ -29,9 +29,9 @@ function ToastPlayground() {
         <img alt="Cute toast mascot" src="/toast.png" />
         <h1>Toast Playground</h1>
       </header>
-      <ToastShelf >
-        {message}
-      </ToastShelf>
+      
+      <ToastShelf/ >
+      
 
       <form className={styles.controlsWrapper} onSubmit={handleCreateToast}>
         <div className={styles.row}>
@@ -55,7 +55,7 @@ function ToastPlayground() {
         </div>
 
         <div className={styles.row}>
-          <div className={styles.label}>Variant</div>
+          <div className={styles.label}>Variant</div> 
           <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
             {VARIANT_OPTIONS.map((option) => (
               <label htmlFor={`variant-${option}`} key={option}>
@@ -64,7 +64,7 @@ function ToastPlayground() {
                   type="radio"
                   name="variant"
                   value={option}
-                  checked={option === variant}
+              checked = {option===variant}
                   onChange={(event) => {
                     setVariant(event.target.value);
                   }}
